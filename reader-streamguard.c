@@ -202,13 +202,13 @@ static int32_t streamguard_card_init(struct s_reader *reader, ATR* newatr)
 			rdr_log(reader, "error: init read data failed for begin cmd2.");
 			return ERROR;
 		}
-
+#if 0
 		write_cmd(begin_cmd3, begin_cmd3 + 5);
 		if((cta_res[cta_lr - 2] != 0x90) || (cta_res[cta_lr - 1] != 0x00)){
 			rdr_log(reader, "error: init begin cmd3 failed.");
 		//	return ERROR;
 		}
-#if 0
+
 		write_cmd(begin_cmd4, begin_cmd4 + 5);
 		if((cta_res[cta_lr - 2] != 0x90) || (cta_res[cta_lr - 1] != 0x00)){
 			rdr_log(reader, "error: init begin cmd4 failed.");
